@@ -1,7 +1,6 @@
 # rem自适应的原理
 
-
-##等比缩放原理
+## 等比缩放原理
 
 rem的本质是等比缩放，在不同设备下，ue图等比缩放。
 
@@ -46,7 +45,7 @@ xrem=设计稿元素宽度/设计稿宽度*100
 设置后在不同设备下，ue图等比缩放
 
 
-##单位优化
+## 单位优化
 
 每次去计算rem的值实在是太麻烦了，可不可以我在设计稿上量出多少，我就写多少呢？在less和sass中去定义一个自定义变量rpx使
 
@@ -71,7 +70,7 @@ p{
 ```
 
 
-##安卓机型兼容问题
+## 安卓机型兼容问题
 
 在三星Galaxy5和华为荣耀9中，发现屏幕展示偏大，经过追踪，发现其中1rem!=root font-size
 为了校正此问题，如果1rem 是font-size的n倍，则将font-size缩小n（n可以大于1，也可以小于1）倍。
@@ -81,23 +80,23 @@ p{
 具体代码如下
 
 ```
-    function remPatch(){
-        var remTestFragment = document.createElement('div');
-        remTestFragment.id = 'rem-test';
-        remTestFragment.style.width = '100rem';
-        remTestFragment.style.opacity = 0;
-        remTestFragment.style.position = 'absolute';
-        remTestFragment.style.top = '-1000px';
-        remTestFragment.style.left = '-1000px';
-        document.addEventListener('DOMContentLoaded', function(){
-            document.body.appendChild(remTestFragment);
-            var currentTestWidth = remTestFragment.offsetWidth;
-            var rootFontSize = docEl.style.fontSize.replace(/px/, '') * 100;/*提高精度*/
-            var scale = currentTestWidth / rootFontSize;
-            rootFontSize = rootFontSize / 100 / scale;/*提高精度*/
-            window.rootFontSize = rootFontSize;
-            docEl.style.fontSize = rootFontSize + 'px';
-            remTestFragment.parentNode.removeChild(remTestFragment);   
-        });
-    }
+function remPatch(){
+    var remTestFragment = document.createElement('div');
+    remTestFragment.id = 'rem-test';
+    remTestFragment.style.width = '100rem';
+    remTestFragment.style.opacity = 0;
+    remTestFragment.style.position = 'absolute';
+    remTestFragment.style.top = '-1000px';
+    remTestFragment.style.left = '-1000px';
+    document.addEventListener('DOMContentLoaded', function(){
+        document.body.appendChild(remTestFragment);
+        var currentTestWidth = remTestFragment.offsetWidth;
+        var rootFontSize = docEl.style.fontSize.replace(/px/, '') * 100;/*提高精度*/
+        var scale = currentTestWidth / rootFontSize;
+        rootFontSize = rootFontSize / 100 / scale;/*提高精度*/
+        window.rootFontSize = rootFontSize;
+        docEl.style.fontSize = rootFontSize + 'px';
+        remTestFragment.parentNode.removeChild(remTestFragment);   
+    });
+}
 ```
