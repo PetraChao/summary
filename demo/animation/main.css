@@ -1,0 +1,25 @@
+
+        #box {
+            margin: 200px;
+            font-size: 0px;
+        }
+
+        .aa,
+        .bb {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            border: 1px solid #000;
+            border-radius: 100%;
+            margin-top: 50px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 12px;
+        }
+
+        .animate {
+            color: #f00;
+            transform: rotate(360deg);
+            transform-origin: -15px 15px;
+            transition: transform 5s;
+        }
