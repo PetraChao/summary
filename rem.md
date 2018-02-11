@@ -73,7 +73,7 @@ p{
 ## 安卓机型兼容问题
 
 在三星Galaxy5和华为荣耀9中，发现屏幕展示偏大，经过追踪，发现其中1rem!=root font-size
-为了校正此问题，如果1rem 是font-size的n倍，则将font-size缩小n（n可以大于1，也可以小于1）倍。
+，（端内webview的1rem=1.233font-size，非dpr）为了校正此问题，如果1rem 是font-size的n倍，则将font-size缩小n（n可以大于1，也可以小于1）倍。
 那么怎么计算n值呢？我创建一个100rem的元素，计算他的offsetWidth，和用root font-size计算出来的宽度。
 他们之间的比offsetWidth/root font-size计算出来的宽度就为n。将其缩小n倍，则解决了1rem!=root font-size的问题
 
