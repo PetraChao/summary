@@ -89,10 +89,9 @@ dpr，设备像素比:
 
 ### 缩放
 
-在不同的屏幕上，CSS像素所呈现的物理尺寸是一致的，而不同的是CSS像素所对应的物理像素是不一致的。在普通屏幕下1个CSS像素对应1个物理像素，而在Retina屏幕下，1个CSS像素对应的却是4个物理像素。这样的显示，会导致retina屏幕下图片不清晰，那么我们可以这样做：
+在不同的屏幕上，CSS像素所呈现的物理尺寸是一致的，而不同的是CSS像素所对应的物理像素是不一致的。在普通屏幕下1个CSS像素对应1个物理像素，而在Retina屏幕下，1个CSS像素对应的却是4个物理像素。（将一个750px的图片设置为375px，图片的渲染像素就是375css像素了，1个css像素仍旧占了4个物理像素，导致图片模糊）这样的显示，会导致retina屏幕下图片不清晰，那么我们可以这样做：
 将css放大dpr倍，屏幕view-port缩放1/dpr倍。这样1个css像素就会对应1个物理像素，而清晰的显示图片了。
 
-？？？？可是我将一个750px的图片设置为375px，图片的实际css像素还是750啊，1个css像素仍旧占了1个物理像素。并没有什么变化啊。
 
 
 ```
@@ -180,8 +179,8 @@ document.documentElement.setAttribute('data-dpr', dpr);
 
 ## 安卓机型兼容问题
 
-在三星Galaxy5和华为荣耀9中，发现屏幕展示偏大，经过追踪，发现其中1rem!=root font-size
-，（端内webview的1rem=1.233font-size，非dpr）为了校正此问题，如果1rem 是font-size的n倍，则将font-size缩小n（n可以大于1，也可以小于1）倍。
+在三星Galaxy5和华为荣耀9中，发现端内h5容器内屏幕展示偏大，经过追踪，发现其中1rem!=root font-size
+，（端内webview的1rem=1.233font-size）为了校正此问题，如果1rem 是font-size的n倍，则将font-size缩小n（n可以大于1，也可以小于1）倍。
 那么怎么计算n值呢？我创建一个100rem的元素，计算他的offsetWidth，和用root font-size计算出来的宽度。
 他们之间的比offsetWidth/root font-size计算出来的宽度就为n。将其缩小n倍，则解决了1rem!=root font-size的问题
 
