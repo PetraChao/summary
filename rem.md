@@ -101,6 +101,7 @@ dpr，设备像素比:
 
 ```
 rem = rootWidth * dpr/100;
+scale = 1/dpr;
 metaEl.setAttribute('content', 'initial-scale=' + scale + ',user-scalable=yes' + (needviewPortFit ? ', viewport-fit=cover':''));
 ```
 
