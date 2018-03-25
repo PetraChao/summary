@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.parents{
+    position: relative;
+    background: navajowhite;
+    margin-top: 30px;
+}
+.child1{
+    background: palegreen;
+    float: left;
+    margin-top:10px;
+}
+.child2{
+    background: orchid;
+    height: 100px;
+}
+img{
+    width: 30px;
+}

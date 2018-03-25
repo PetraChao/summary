@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>垂直居中</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    的撒链接
+    <div class="parents">
+        <div class="child">something</div>
+    </div>
+
+    <iframe id="iframe" src="file:///Users/didi/develop/project/summary/demo/horizon_center/main.html" frameborder="0">
+    </iframe>
+
+    <script>
+        setTimeout(() => {
+            alert(document.getElementById("iframe").contentWindow.document.getElementById('logo'));
+        }, 1000);
+    </script>
+<script src="main.js"></script>
+</body>
+</html>

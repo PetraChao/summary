@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.parents{
+    position: relative;
+    background: red;
+}
+.child{
+    background: paleturquoise;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    // transform: translate(-50%, -50%);
+    margin-left:-50%;
+}
