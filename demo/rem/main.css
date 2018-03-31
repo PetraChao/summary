@@ -1,0 +1,25 @@
+.aa{
+    border: solid black 1px;
+    background: red;
+    width: 40%;
+}
+.border-half{
+    position: relative;
+    background: greenyellow;
+    width: 100px;
+}
+.border-half::after{
+    position: absolute;
+    border: solid black 1px;
+    content: ' ';
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    left: 0;
+    transform-origin: left top;
+    top: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,14 @@
+.input-container{
+    background: lawngreen;
+    width: 200px;
+    word-break: keep-all;
+}
+.input-lable{
+    display: table-cell;
+    background: indianred;
+}
+.input-item{
+    display: table-cell;
+    background: blue;
+    width: 100%;
+}

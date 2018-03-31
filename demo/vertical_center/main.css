@@ -1,16 +1,18 @@
-body{
-    margin: 0;
-    padding: 0;
+.parent{
+    
 }
-.parents{
-    position: relative;
-    background: red;
+.left {
+    width: 100%;
+    height: 500px;
+    float: left;
+    margin-right: -100px; /*正值等于#right的宽度*/
+    background-color: #f00;
 }
-.child{
-    background: paleturquoise;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    // transform: translate(-50%, -50%);
-    margin-left:-50%;
+.right {
+    height: 500px;
+    width: 100px;
+    float: right;
+    background-color: #0f0;/*利用单元格自动分配宽度*/
+}
+.left,.right{
 }
